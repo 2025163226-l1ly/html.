@@ -41,6 +41,7 @@ article {
 /* Clear floats after the columns */
 section:after {
   content: "";
+  background-color:  #FFD6FF;
   display: table;
   clear: both;
 }
