@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<style>
+body{
+     background: linear-gradient(180deg, #84ffc9 50%,#aab2ff 50%, #84ffc9 50%); 
+    font-family: Arial, Helvetica, sans-serif; 
+    margin: 0;
+    padding: 0;
+}
+</style>
+
+<head>
+    <title>This is A BMI Calculator</title>
+</head>
+
+
+<div><center>
+<body>
+    <i><h2>BMI Calculater</h2></i>
+    <input type="weight" id="lbs" placeholder="Enter weight in lbs">
+    <input type="height" id="inches" placeholder="Enter height in inches">
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <p>Result:<span id="result"></span></p>
+
+
+
+
+    <script> 
+        function calculateBMI() {
+            // Get the values from the input fields
+            const lbs = parseFloat(document.getElementById('lbs').value);
+            const heightInches = parseFloat(document.getElementById('inches').value);
+
+
+            // Calculate the Bmi
+            const bmi = (lbs * 703 / (heightInches * heightInches));
+
+
+            let meaning = "";
+            if (bmi < 18.5) {
+                meaning = "You are under weight, take care of your health.";
+            } else if (bmi < 24.5) {
+                meaning = "You are healthy"
+            } else if (bmi < 29.5) {
+                meaning = "You are overweight, take care of your health"
+            } else {
+                meaning = "You are obese. It might be helpful to consult a healthcare provider.";
+            }
+            // Display the result
+            document.getElementById('result').innerHTML = `Your BMI is  <strong>${bmi.toFixed(2)}<strong> (${meaning}).`;
+        }
+
+
+
+
+    </script>
+	</div></center>
+</body>
+
+
+</html>
